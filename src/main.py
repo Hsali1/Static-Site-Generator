@@ -1,11 +1,19 @@
+from pydoc import text
+
 from src.textnode import TextNode, TextType
-from src.converters import split_nodes_delimiter, split_nodes_image, split_nodes_link
+from src.converters import split_nodes_delimiter, split_nodes_image, split_nodes_link, text_to_textnodes, markdown_to_html_node
 
 def main():
-    node = TextNode(
-        "This is text with a image ![to boot dev](https://www.boot.dev) and ![to youtube](https://www.youtube.com/@bootdotdev)",
-        TextType.PLAIN,
-    )
-    new_nodes = split_nodes_image([node])
+    md = """
+This is **bolded** paragraph
+text in a p
+tag here
+
+This is another paragraph with _italic_ text and `code` here
+
+"""
+    node = markdown_to_html_node(md)
+    html = node.to_html()
+    print(html)
 
 main()
