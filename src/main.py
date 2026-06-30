@@ -10,15 +10,21 @@ from src.converters import (
 )
 
 from src.copy_static_to_public import copy_static_to_public
-from src.page_functions import extract_title, generate_page
+from src.page_functions import extract_title, generate_page, generate_pages_recursive
 
 def main():
     source_directory = "static"
     destination_directory = "public"
     copy_static_to_public(source_directory, destination_directory)
 
+    markdown_path = "content/"
+    template_path = "./template.html"
+    destination_path = "public/"
 
-    # generate_page()
+
+    # generate_page(markdown_path, template_path, destination_path)
+    generate_pages_recursive(markdown_path, template_path, destination_path)
+
 
 
 main()
