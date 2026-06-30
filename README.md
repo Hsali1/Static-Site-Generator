@@ -109,13 +109,7 @@ The site generator recursively walks the `content` directory, converts every Mar
 
 ## Running Locally
 
-Build the site:
-
-```bash
-./build.sh
-```
-
-Run the local development server:
+Generate the site:
 
 ```bash
 ./main.sh
@@ -126,6 +120,20 @@ Then open:
 ```
 http://localhost:8888
 ```
+
+---
+
+## Deploying to GitHub Pages
+
+Build the production version of the site:
+
+```bash
+./build.sh
+```
+
+Commit and push the generated `docs/` directory to GitHub.
+
+GitHub Pages will automatically publish the site.
 
 ---
 
